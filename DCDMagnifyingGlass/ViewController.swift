@@ -32,12 +32,17 @@ class ViewController: UIViewController {
         
         magnifyingView = DCDMagnifyingGlassView(frame: CGRectMake(40, 40, 100, 100))
         magnifyingView?.targetView = self.view
+        magnifyingView?.scale = 0.5
         self.view.addSubview(magnifyingView!)
+        
+        var magnifyingView2 = DCDMagnifyingGlassView(frame: CGRectMake(20, 20,50, 50))
+        magnifyingView2.targetView = magnifyingView
+        magnifyingView2.scale = 0.5
+        magnifyingView?.addSubview(magnifyingView2)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        magnifyingView?.setImage()
 
         //var croppedImageView = DCDMagnifyingGlassView.magnifyView(self.view, inRect: CGRectMake(0, 300, 60, 60), scale: 3)
     }
