@@ -93,8 +93,8 @@
 				C5BD066C1ACCDEFB00B2674B /* Supporting Files */,
 				C5BD068E1ACCDF1A00B2674B /* DCDMagnifyingGlassView.swift */,
 				C51DE2511ACF86C800FA6975 /* UIImage+Snapshot.swift */,
-				C51DE2531ACF871F00FA6975 /* UIImageView+Snapshot.swift */,
 				C51DE2551ACF988000FA6975 /* UIImage+Resize.swift */,
+				C51DE2531ACF871F00FA6975 /* UIImageView+Snapshot.swift */,
 			);
 			path = DCDMagnifyingGlass;
 			sourceTree = "<group>";

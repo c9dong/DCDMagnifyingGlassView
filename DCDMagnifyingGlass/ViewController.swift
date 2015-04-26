@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  DCDMagnifyingGlass
 //
-//  Created by Negin Hodaie on 2015-04-01.
-//  Copyright (c) 2015 Negin Hodaie. All rights reserved.
+//  Created by David Dong on 2015-04-01.
+//  Copyright (c) 2015 David Dong. All rights reserved.
 //
 
 import UIKit
@@ -30,15 +30,23 @@ class ViewController: UIViewController {
         imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
         self.view.addSubview(imageView)
         
-        magnifyingView = DCDMagnifyingGlassView(frame: CGRectMake(40, 40, 100, 100))
+        /*magnifyingView = DCDMagnifyingGlassView(frame: CGRectMake(40, 40, 100, 100))
         magnifyingView?.targetView = self.view
-        magnifyingView?.scale = 0.5
-        self.view.addSubview(magnifyingView!)
+        magnifyingView?.scale = 2
+        self.view.addSubview(magnifyingView!)*/
         
-        var magnifyingView2 = DCDMagnifyingGlassView(frame: CGRectMake(20, 20,50, 50))
-        magnifyingView2.targetView = magnifyingView
-        magnifyingView2.scale = 0.5
-        magnifyingView?.addSubview(magnifyingView2)
+//        var magnifyingView2 = DCDMagnifyingGlassView(frame: CGRectMake(20, 20,50, 50))
+//        magnifyingView2.targetView = magnifyingView
+//        magnifyingView2.scale = 2
+//        magnifyingView?.addSubview(magnifyingView2)
+        
+        var testLabel = UILabel(frame: CGRectMake(100, 100, 100, 50))
+        testLabel.text = "This is a test Label"
+        self.view.addSubview(testLabel)
+        
+        DCDMagnifyingGlassView.setTargetView(self.view)
+        DCDMagnifyingGlassView.setScale(5)
+        DCDMagnifyingGlassView.show(CGRect(x: 125,y: 100,width: 50,height: 50))
     }
     
     override func viewDidAppear(animated: Bool) {

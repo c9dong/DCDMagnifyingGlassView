@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  DCDMagnifyingGlass
 //
-//  Created by Negin Hodaie on 2015-04-01.
-//  Copyright (c) 2015 Negin Hodaie. All rights reserved.
+//  Created by David Dong 2015-04-01.
+//  Copyright (c) 2015 David Dong. All rights reserved.
 //
 
 import UIKit
