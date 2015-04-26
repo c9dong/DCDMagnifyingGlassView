@@ -30,29 +30,48 @@ class ViewController: UIViewController {
         imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
         self.view.addSubview(imageView)
         
-        /*magnifyingView = DCDMagnifyingGlassView(frame: CGRectMake(40, 40, 100, 100))
-        magnifyingView?.targetView = self.view
-        magnifyingView?.scale = 2
-        self.view.addSubview(magnifyingView!)*/
-        
-//        var magnifyingView2 = DCDMagnifyingGlassView(frame: CGRectMake(20, 20,50, 50))
-//        magnifyingView2.targetView = magnifyingView
-//        magnifyingView2.scale = 2
-//        magnifyingView?.addSubview(magnifyingView2)
-        
         var testLabel = UILabel(frame: CGRectMake(100, 100, 100, 50))
         testLabel.text = "This is a test Label"
         self.view.addSubview(testLabel)
         
+        var showButton: UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        showButton.setTitle("show", forState: UIControlState.Normal)
+        showButton.addTarget(self, action: "showAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        showButton.frame = CGRect(x: 20, y: 20, width: 100, height: 50)
+        self.view.addSubview(showButton)
+        
+        var draggingButton: UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        draggingButton.setTitle("Allow drag", forState: UIControlState.Normal)
+        draggingButton.addTarget(self, action: "dragAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        draggingButton.frame = CGRect(x: 120, y: 20, width: 100, height: 50)
+        self.view.addSubview(draggingButton)
+        
         DCDMagnifyingGlassView.setTargetView(self.view)
         DCDMagnifyingGlassView.setScale(5)
-        DCDMagnifyingGlassView.show(CGRect(x: 125,y: 100,width: 50,height: 50))
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        //var croppedImageView = DCDMagnifyingGlassView.magnifyView(self.view, inRect: CGRectMake(0, 300, 60, 60), scale: 3)
+    func showAction(sender: UIButton) {
+        DCDMagnifyingGlassView.show(CGRect(x: 125,y: 100,width: 50,height: 50))
+        sender.setTitle("hide", forState: UIControlState.Normal)
+        sender.addTarget(self, action: "hideAction:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func hideAction(sender: UIButton) {
+        DCDMagnifyingGlassView.dismiss()
+        sender.setTitle("show", forState: UIControlState.Normal)
+        sender.addTarget(self, action: "showAction:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func dragAction(sender: UIButton) {
+        DCDMagnifyingGlassView.allowDragging(true)
+        sender.setTitle("Disable drag", forState: UIControlState.Normal)
+        sender.addTarget(self, action: "undragAction:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func undragAction(sender: UIButton) {
+        DCDMagnifyingGlassView.allowDragging(false)
+        sender.setTitle("Allow drag", forState: UIControlState.Normal)
+        sender.addTarget(self, action: "dragAction:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 }
 

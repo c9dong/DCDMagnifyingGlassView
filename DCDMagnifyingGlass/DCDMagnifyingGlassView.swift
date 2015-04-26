@@ -20,10 +20,9 @@ class DCDMagnifyingGlassView: UIView {
     
     //MARK: Properties
     var scale: CGFloat = 2
-    
     let magnifyingImageView: UIImageView = UIImageView()
-    
     var targetView: UIView?
+    var panGestureRecognizer = UIPanGestureRecognizer()
     
     //MARK: Constructors
     convenience init(){
@@ -42,15 +41,15 @@ class DCDMagnifyingGlassView: UIView {
     
     func setupViews() {
         //Set up views
-        magnifyingImageView.frame = frame;
         magnifyingImageView.frame = self.bounds
         magnifyingImageView.contentMode = UIViewContentMode.ScaleToFill
         magnifyingImageView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.addSubview(magnifyingImageView)
         
         //Set up gesture recognizer
-        var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panAction:")
+        panGestureRecognizer.addTarget(self, action: "panAction:")
         self.addGestureRecognizer(panGestureRecognizer)
+        panGestureRecognizer.enabled = false
         
         //Config layer
         let cornerRadius: CGFloat = CGFloat(max(frame.size.width, frame.size.height)/2)
@@ -76,6 +75,7 @@ class DCDMagnifyingGlassView: UIView {
     //MARK: Helper functions
     private func moveView(translation: CGPoint) {
         self.frame = CGRectMake(self.frame.origin.x + translation.x, self.frame.origin.y + translation.y, self.frame.size.width, self.frame.size.height)
+        self.layoutSubviews()
     }
     
     //MARK: Refresh
@@ -117,9 +117,14 @@ class DCDMagnifyingGlassView: UIView {
         DCDMagnifyingGlassView.sharedInstance.scale = scale
     }
     
+    class func allowDragging(allowDragging: Bool) {
+        DCDMagnifyingGlassView.sharedInstance.panGestureRecognizer.enabled = allowDragging
+    }
+    
     //MARK: Show/Dismiss
     class func show(frame: CGRect) {
         DCDMagnifyingGlassView.sharedInstance.frame = frame;
+        DCDMagnifyingGlassView.sharedInstance.layoutSubviews()
         
         if(DCDMagnifyingGlassView.sharedInstance.targetView != nil){
             DCDMagnifyingGlassView.sharedInstance.targetView?.addSubview(DCDMagnifyingGlassView.sharedInstance)
