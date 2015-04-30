@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.lightGrayColor()
         
         var label = UILabel(frame: CGRect(x: 12, y: 50, width: self.view.bounds.size.width-24, height: self.view.bounds.size.height-50))
         label.numberOfLines = 0
@@ -36,17 +36,17 @@ class ViewController: UIViewController {
         var image = UIImageView(image: UIImage(named: "background"))
         image.contentMode = UIViewContentMode.ScaleAspectFill
         image.frame = self.view.bounds 
-        self.view.addSubview(image)
+        //self.view.addSubview(image)
         
         var showButton: UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         showButton.setTitle("show", forState: UIControlState.Normal)
         showButton.addTarget(self, action: "showAction:", forControlEvents: UIControlEvents.TouchUpInside)
         showButton.sizeToFit()
-        showButton.center = CGPoint(x: self.view.bounds.size.width/2, y: 200)
+        showButton.center = CGPoint(x: self.view.bounds.size.width/2, y: 40)
         self.view.addSubview(showButton)
         
         DCDMagnifyingGlassView.setTargetView(self.view)
-        DCDMagnifyingGlassView.setScale(5.0)
+        DCDMagnifyingGlassView.setScale(2.0)
     }
     
     func showAction(sender: UIButton) {
