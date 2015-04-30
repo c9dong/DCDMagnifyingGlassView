@@ -22,11 +22,11 @@ class func allowDragging(allowDragging: Bool)
 You can show and dismiss **`DCDMagnifyingGlassView`** using the following class methods:
 
 ```objective-c
-//Set the frame of **`DCDMagnifyingGlassView`** and add it to the targetView
+//Set the frame of DCDMagnifyingGlassView and add it to the targetView
 class func show(frame: CGRect) //No animation
 class func show(frame: CGRect, animated: Bool)
 
-//Dismiss **`DCDMagnifyingGlassView`** and remove it from the targetView
+//Dismiss DCDMagnifyingGlassView and remove it from the targetView
 class func dismiss() //No animation
 class func dismissAnimated(animated: Bool)
 ```
