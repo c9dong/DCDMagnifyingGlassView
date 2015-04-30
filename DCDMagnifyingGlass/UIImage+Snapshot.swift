@@ -25,7 +25,6 @@ extension UIImage {
         //Snapshot of view
         UIGraphicsBeginImageContextWithOptions(rect.size, true, scale)
         CGContextTranslateCTM(UIGraphicsGetCurrentContext(), -rect.origin.x, -rect.origin.y)
-        //newView.drawViewHierarchyInRect(newView.bounds, afterScreenUpdates: true)
         view.layer.renderInContext(UIGraphicsGetCurrentContext()) //Need this to stop screen flashing, but it's slower
         var snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
