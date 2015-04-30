@@ -2,9 +2,9 @@
 
 Magnify your views anywhere, at anytime, using `DCDMagnifyingGlassView`!
 
-![DCDMagnifyingGlass Demo](https://github.com/c9dong/DCDMagnifyingGlassView/blob/master/Images/DCDMagnifyingGlassVideo1.gif)
-
-![DCDMagnifyingGlass Demo] (https://github.com/c9dong/DCDMagnifyingGlassView/blob/master/Images/DCDMagnifyingGlassVideo2.gif)
+Text                                        |Image
+:------------------------------------------:|:------------------------------------------:
+![DCDMagnifyingGlass Demo](https://github.com/c9dong/DCDMagnifyingGlassView/blob/master/Images/DCDMagnifyingGlassVideo1.gif)|![DCDMagnifyingGlass Demo] (https://github.com/c9dong/DCDMagnifyingGlassView/blob/master/Images/DCDMagnifyingGlassVideo2.gif)
 
 ## How to Use
 
