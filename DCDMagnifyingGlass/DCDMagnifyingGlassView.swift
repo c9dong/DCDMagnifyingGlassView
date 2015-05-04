@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-private let _DCDMagnifyingGlassViewInstance = DCDMagnifyingGlassView()
+private let _DCDMagnifyingGlassViewInstance: DCDMagnifyingGlassView = DCDMagnifyingGlassView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
 
 class DCDMagnifyingGlassView: UIView {
     
@@ -23,7 +23,7 @@ class DCDMagnifyingGlassView: UIView {
     let shadowLayer: CAShapeLayer = CAShapeLayer()
     let panGestureRecognizer = UIPanGestureRecognizer()
     
-    var targetView: UIView?
+    var targetView: UIView = UIApplication.sharedApplication().windows.first as! UIView
     var scale: CGFloat = 2
     
     //MARK: Constructors
@@ -68,12 +68,10 @@ class DCDMagnifyingGlassView: UIView {
         let shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius)
         shadowLayer.shadowPath = shadowPath.CGPath
         shadowLayer.shadowColor = UIColor.blackColor().CGColor
-        shadowLayer.shadowOpacity = 0.5
+        shadowLayer.shadowOpacity = 0.7
         shadowLayer.shadowOffset = CGSize(width: 0, height: 3)
         
-        if(targetView != nil){
-            refreshImage()
-        }
+        refreshImage()
     }
     
     
@@ -83,6 +81,36 @@ class DCDMagnifyingGlassView: UIView {
         self.layoutSubviews()
     }
     
+    private func snapshotTargetView(view: UIView!, inRect rect: CGRect!) -> UIImage! {
+        //Hide self
+        self.hidden = true
+        
+        var scale = UIScreen.mainScreen().scale
+        
+        //Snapshot of view
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, scale)
+        CGContextTranslateCTM(UIGraphicsGetCurrentContext(), -rect.origin.x, -rect.origin.y)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()) //Need this to stop screen flashing, but it's slower
+        var snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Show self
+        self.hidden = false
+        
+        return snapshotImage
+    }
+    
+    private func resizeImage(image: UIImage, toNewSize newSize:CGSize) -> UIImage {
+        var scale = UIScreen.mainScreen().scale
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, scale)
+        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        var newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage;
+    }
+    
     //MARK: Refresh
     func refreshImage() {
         //Since we are scaling the image, we can take a snapshot of a smaller image instead, thus increasing performance
@@ -90,8 +118,8 @@ class DCDMagnifyingGlassView: UIView {
         var newHeight = self.frame.size.height / scale
         var newX = (self.frame.size.width - newWidth) / 2 + self.frame.origin.x
         var newY = (self.frame.size.height - newHeight) / 2 + self.frame.origin.y
-        var newImage = UIImage.imageBySnapshotView(targetView, inRect: CGRectMake(newX, newY, newWidth, newHeight), ExcludeViews: [self])
-        newImage = UIImage.imageByResizingImage(newImage, toNewSize: self.frame.size)
+        var newImage = snapshotTargetView(targetView, inRect: CGRect(x: newX, y: newY, width: newWidth, height: newHeight))
+        newImage = resizeImage(newImage, toNewSize: self.frame.size)
         magnifyingImageView.image = newImage
     }
     
@@ -101,12 +129,12 @@ class DCDMagnifyingGlassView: UIView {
         case UIGestureRecognizerState.Began:
             break;
         case UIGestureRecognizerState.Changed:
-            var translation = sender.translationInView(targetView!)
+            var translation = sender.translationInView(targetView)
             moveView(translation)
-            sender.setTranslation(CGPointZero, inView: targetView!)
+            sender.setTranslation(CGPointZero, inView: targetView)
             break;
         case UIGestureRecognizerState.Ended, UIGestureRecognizerState.Failed:
-            sender.setTranslation(CGPointZero, inView: targetView!)
+            sender.setTranslation(CGPointZero, inView: targetView)
             break;
         default:
             break;
@@ -144,19 +172,22 @@ class DCDMagnifyingGlassView: UIView {
     class func allowDragging(allowDragging: Bool) {
         DCDMagnifyingGlassView.sharedInstance.panGestureRecognizer.enabled = allowDragging
     }
-    
-    //MARK: Show/Dismiss
-    class func show(frame: CGRect) {
-        DCDMagnifyingGlassView.show(frame, animated: false)
-    }
-    
-    class func show(frame: CGRect, animated: Bool) {
-        if(DCDMagnifyingGlassView.sharedInstance.targetView == nil){
-            return;
+    class func setContentFrame(frame: CGRect) {
+        var correctedFrame = frame
+        var width = frame.size.width
+        var height = frame.size.height
+        if(width != height) {
+            width = min(width, height)
+            height = width
+            correctedFrame = CGRect(x: frame.origin.x, y: frame.origin.y, width: width, height: height)
         }
-        DCDMagnifyingGlassView.sharedInstance.frame = frame;
+        DCDMagnifyingGlassView.sharedInstance.frame = correctedFrame
+    }
+
+    //MARK: Show/Dismiss
+    class func show(animated: Bool) {
         DCDMagnifyingGlassView.sharedInstance.layoutSubviews()
-        DCDMagnifyingGlassView.sharedInstance.targetView?.addSubview(DCDMagnifyingGlassView.sharedInstance)
+        DCDMagnifyingGlassView.sharedInstance.targetView.addSubview(DCDMagnifyingGlassView.sharedInstance)
         if(animated) {
             DCDMagnifyingGlassView.sharedInstance.alpha = 0
             UIView.animateWithDuration(0.25,
@@ -168,14 +199,7 @@ class DCDMagnifyingGlassView: UIView {
         }
     }
     
-    class func dismiss() {
-        DCDMagnifyingGlassView.dismissAnimated(false)
-    }
-    
-    class func dismissAnimated(animated: Bool) {
-        if(DCDMagnifyingGlassView.sharedInstance.targetView == nil) {
-            return;
-        }
+    class func dismiss(animated: Bool) {
         UIView.animateWithDuration(0.25,
             delay: 0,
             options: UIViewAnimationOptions.CurveEaseInOut,

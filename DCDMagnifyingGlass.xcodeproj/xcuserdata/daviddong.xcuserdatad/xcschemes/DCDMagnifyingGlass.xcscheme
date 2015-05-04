@@ -42,16 +42,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5BD067D1ACCDEFB00B2674B"
-               BuildableName = "DCDMagnifyingGlassTests.xctest"
-               BlueprintName = "DCDMagnifyingGlassTests"
-               ReferencedContainer = "container:DCDMagnifyingGlass.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

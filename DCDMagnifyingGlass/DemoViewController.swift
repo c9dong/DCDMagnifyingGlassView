@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DemoViewController.swift
 //  DCDMagnifyingGlass
 //
 //  Created by David Dong on 2015-04-01.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DemoViewController: UIViewController {
     
     var magnifyingView: DCDMagnifyingGlassView?
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         var image = UIImageView(image: UIImage(named: "background"))
         image.contentMode = UIViewContentMode.ScaleAspectFill
         image.frame = self.view.bounds 
-        //self.view.addSubview(image)
+        self.view.addSubview(image)
         
         var showButton: UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         showButton.setTitle("show", forState: UIControlState.Normal)
@@ -47,34 +47,21 @@ class ViewController: UIViewController {
         
         DCDMagnifyingGlassView.setTargetView(self.view)
         DCDMagnifyingGlassView.setScale(2.0)
+        DCDMagnifyingGlassView.setContentFrame(CGRect(x: 115,y: 90,width:  100,height: 100))
     }
     
     func showAction(sender: UIButton) {
-        DCDMagnifyingGlassView.show(CGRect(x: 115,y: 90,width:  100,height: 100), animated: true)
+        DCDMagnifyingGlassView.show(true)
         sender.setTitle("hide", forState: UIControlState.Normal)
         sender.removeTarget(self, action: "showAction:", forControlEvents: UIControlEvents.TouchUpInside)
         sender.addTarget(self, action: "hideAction:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     func hideAction(sender: UIButton) {
-        DCDMagnifyingGlassView.dismissAnimated(true)
+        DCDMagnifyingGlassView.dismiss(true)
         sender.setTitle("show", forState: UIControlState.Normal)
         sender.removeTarget(self, action: "hideAction:", forControlEvents: UIControlEvents.TouchUpInside)
         sender.addTarget(self, action: "showAction:", forControlEvents: UIControlEvents.TouchUpInside)
-    }
-    
-    func dragAction(sender: UIButton) {
-        DCDMagnifyingGlassView.allowDragging(true)
-        sender.setTitle("Disable drag", forState: UIControlState.Normal)
-        sender.removeTarget(self, action: "dragAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        sender.addTarget(self, action: "undragAction:", forControlEvents: UIControlEvents.TouchUpInside)
-    }
-    
-    func undragAction(sender: UIButton) {
-        DCDMagnifyingGlassView.allowDragging(false)
-        sender.setTitle("Allow drag", forState: UIControlState.Normal)
-        sender.removeTarget(self, action: "undragAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        sender.addTarget(self, action: "dragAction:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 }
 

@@ -7,54 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C51DE2521ACF86C800FA6975 /* UIImage+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2511ACF86C800FA6975 /* UIImage+Snapshot.swift */; };
-		C51DE2541ACF871F00FA6975 /* UIImageView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2531ACF871F00FA6975 /* UIImageView+Snapshot.swift */; };
-		C51DE2561ACF988000FA6975 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2551ACF988000FA6975 /* UIImage+Resize.swift */; };
 		C5BD066F1ACCDEFB00B2674B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD066E1ACCDEFB00B2674B /* AppDelegate.swift */; };
-		C5BD06711ACCDEFB00B2674B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD06701ACCDEFB00B2674B /* ViewController.swift */; };
+		C5BD06711ACCDEFB00B2674B /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD06701ACCDEFB00B2674B /* DemoViewController.swift */; };
 		C5BD06741ACCDEFB00B2674B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD06721ACCDEFB00B2674B /* Main.storyboard */; };
 		C5BD06761ACCDEFB00B2674B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5BD06751ACCDEFB00B2674B /* Images.xcassets */; };
 		C5BD06791ACCDEFB00B2674B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BD06771ACCDEFB00B2674B /* LaunchScreen.xib */; };
-		C5BD06851ACCDEFB00B2674B /* DCDMagnifyingGlassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD06841ACCDEFB00B2674B /* DCDMagnifyingGlassTests.swift */; };
 		C5BD068F1ACCDF1A00B2674B /* DCDMagnifyingGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD068E1ACCDF1A00B2674B /* DCDMagnifyingGlassView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C5BD067F1ACCDEFB00B2674B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5BD06611ACCDEFB00B2674B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C5BD06681ACCDEFB00B2674B;
-			remoteInfo = DCDMagnifyingGlass;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		C51DE2511ACF86C800FA6975 /* UIImage+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Snapshot.swift"; sourceTree = "<group>"; };
-		C51DE2531ACF871F00FA6975 /* UIImageView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Snapshot.swift"; sourceTree = "<group>"; };
-		C51DE2551ACF988000FA6975 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		C5BD06691ACCDEFB00B2674B /* DCDMagnifyingGlass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCDMagnifyingGlass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD066D1ACCDEFB00B2674B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5BD066E1ACCDEFB00B2674B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C5BD06701ACCDEFB00B2674B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5BD06701ACCDEFB00B2674B /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		C5BD06731ACCDEFB00B2674B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5BD06751ACCDEFB00B2674B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5BD06781ACCDEFB00B2674B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C5BD067E1ACCDEFB00B2674B /* DCDMagnifyingGlassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCDMagnifyingGlassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5BD06831ACCDEFB00B2674B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5BD06841ACCDEFB00B2674B /* DCDMagnifyingGlassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCDMagnifyingGlassTests.swift; sourceTree = "<group>"; };
 		C5BD068E1ACCDF1A00B2674B /* DCDMagnifyingGlassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCDMagnifyingGlassView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C5BD06661ACCDEFB00B2674B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5BD067B1ACCDEFB00B2674B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				C5BD066B1ACCDEFB00B2674B /* DCDMagnifyingGlass */,
-				C5BD06811ACCDEFB00B2674B /* DCDMagnifyingGlassTests */,
 				C5BD066A1ACCDEFB00B2674B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				C5BD06691ACCDEFB00B2674B /* DCDMagnifyingGlass.app */,
-				C5BD067E1ACCDEFB00B2674B /* DCDMagnifyingGlassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,15 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				C5BD066E1ACCDEFB00B2674B /* AppDelegate.swift */,
-				C5BD06701ACCDEFB00B2674B /* ViewController.swift */,
+				C5BD06701ACCDEFB00B2674B /* DemoViewController.swift */,
 				C5BD06721ACCDEFB00B2674B /* Main.storyboard */,
 				C5BD06751ACCDEFB00B2674B /* Images.xcassets */,
 				C5BD06771ACCDEFB00B2674B /* LaunchScreen.xib */,
 				C5BD066C1ACCDEFB00B2674B /* Supporting Files */,
 				C5BD068E1ACCDF1A00B2674B /* DCDMagnifyingGlassView.swift */,
-				C51DE2511ACF86C800FA6975 /* UIImage+Snapshot.swift */,
-				C51DE2551ACF988000FA6975 /* UIImage+Resize.swift */,
-				C51DE2531ACF871F00FA6975 /* UIImageView+Snapshot.swift */,
 			);
 			path = DCDMagnifyingGlass;
 			sourceTree = "<group>";
@@ -103,23 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				C5BD066D1ACCDEFB00B2674B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C5BD06811ACCDEFB00B2674B /* DCDMagnifyingGlassTests */ = {
-			isa = PBXGroup;
-			children = (
-				C5BD06841ACCDEFB00B2674B /* DCDMagnifyingGlassTests.swift */,
-				C5BD06821ACCDEFB00B2674B /* Supporting Files */,
-			);
-			path = DCDMagnifyingGlassTests;
-			sourceTree = "<group>";
-		};
-		C5BD06821ACCDEFB00B2674B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C5BD06831ACCDEFB00B2674B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,24 +95,6 @@
 			productReference = C5BD06691ACCDEFB00B2674B /* DCDMagnifyingGlass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C5BD067D1ACCDEFB00B2674B /* DCDMagnifyingGlassTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5BD068B1ACCDEFB00B2674B /* Build configuration list for PBXNativeTarget "DCDMagnifyingGlassTests" */;
-			buildPhases = (
-				C5BD067A1ACCDEFB00B2674B /* Sources */,
-				C5BD067B1ACCDEFB00B2674B /* Frameworks */,
-				C5BD067C1ACCDEFB00B2674B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C5BD06801ACCDEFB00B2674B /* PBXTargetDependency */,
-			);
-			name = DCDMagnifyingGlassTests;
-			productName = DCDMagnifyingGlassTests;
-			productReference = C5BD067E1ACCDEFB00B2674B /* DCDMagnifyingGlassTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -173,10 +106,6 @@
 				TargetAttributes = {
 					C5BD06681ACCDEFB00B2674B = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					C5BD067D1ACCDEFB00B2674B = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = C5BD06681ACCDEFB00B2674B;
 					};
 				};
 			};
@@ -194,7 +123,6 @@
 			projectRoot = "";
 			targets = (
 				C5BD06681ACCDEFB00B2674B /* DCDMagnifyingGlass */,
-				C5BD067D1ACCDEFB00B2674B /* DCDMagnifyingGlassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -210,13 +138,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5BD067C1ACCDEFB00B2674B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -224,32 +145,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5BD06711ACCDEFB00B2674B /* ViewController.swift in Sources */,
-				C51DE2521ACF86C800FA6975 /* UIImage+Snapshot.swift in Sources */,
+				C5BD06711ACCDEFB00B2674B /* DemoViewController.swift in Sources */,
 				C5BD066F1ACCDEFB00B2674B /* AppDelegate.swift in Sources */,
-				C51DE2541ACF871F00FA6975 /* UIImageView+Snapshot.swift in Sources */,
 				C5BD068F1ACCDF1A00B2674B /* DCDMagnifyingGlassView.swift in Sources */,
-				C51DE2561ACF988000FA6975 /* UIImage+Resize.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5BD067A1ACCDEFB00B2674B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C5BD06851ACCDEFB00B2674B /* DCDMagnifyingGlassTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C5BD06801ACCDEFB00B2674B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C5BD06681ACCDEFB00B2674B /* DCDMagnifyingGlass */;
-			targetProxy = C5BD067F1ACCDEFB00B2674B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C5BD06721ACCDEFB00B2674B /* Main.storyboard */ = {
@@ -370,40 +272,6 @@
 			};
 			name = Release;
 		};
-		C5BD068C1ACCDEFB00B2674B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DCDMagnifyingGlassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DCDMagnifyingGlass.app/DCDMagnifyingGlass";
-			};
-			name = Debug;
-		};
-		C5BD068D1ACCDEFB00B2674B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DCDMagnifyingGlassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DCDMagnifyingGlass.app/DCDMagnifyingGlass";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -421,15 +289,6 @@
 			buildConfigurations = (
 				C5BD06891ACCDEFB00B2674B /* Debug */,
 				C5BD068A1ACCDEFB00B2674B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C5BD068B1ACCDEFB00B2674B /* Build configuration list for PBXNativeTarget "DCDMagnifyingGlassTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C5BD068C1ACCDEFB00B2674B /* Debug */,
-				C5BD068D1ACCDEFB00B2674B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
