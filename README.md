@@ -11,24 +11,28 @@ Text                                        |Image
 You can configure **`DCDMagnifyingGlassView`** using the following class methods:
 
 ```objective-c
-//The view to magnify, you must set this for the view to work
+//The view to magnify, uses the top window as default
 class func setTargetView(targetView: UIView)
+
 //How much you want to magnify the view, default is 2x
 class func setScale(scale: CGFloat)
- //Allow you to drag the view, default is false
+
+//Allow you to drag the view, default is false
 class func allowDragging(allowDragging: Bool)
+
+//Allows you to set the frame of the view. The size of the frame will always convert to a square, 
+//with size = MIN(width, height). Default is (100,100,100,100)
+class func setContentFrame(frame: CGRect)
 ```
 
 You can show and dismiss **`DCDMagnifyingGlassView`** using the following class methods:
 
 ```objective-c
 //Set the frame of DCDMagnifyingGlassView and add it to the targetView
-class func show(frame: CGRect) //No animation
-class func show(frame: CGRect, animated: Bool)
+class func show(animated: Bool)
 
 //Dismiss DCDMagnifyingGlassView and remove it from the targetView
-class func dismiss() //No animation
-class func dismissAnimated(animated: Bool)
+class func dismiss(animated: Bool);
 ```
 
 ## Example Code Using Swift
@@ -39,17 +43,18 @@ override func viewDidLoad(){
   DCDMagnifyingGlassView.setTargetView(self.view)
   DCDMagnifyingGlassView.setScale(5.0)
   DCDMagnifyingGlassView.allowDragging(true)
+  DCDMagnifyingGlassView.setContentFrame(CGRect(x: 115,y: 90,width:  100,height: 100))
   
   //Initialize views
   ...
 }
 
 func showButtonClicked(sender: UIButton){
-  DCDMagnifyingGlassView.show(CGRect(x: 115,y: 90,width:  100,height: 100), animated: true)
+  DCDMagnifyingGlassView.show(true)
 }
 
 func hideButtonClicked(sender: UIButton){
-  DCDMagnifyingGlassView.dismissAnimated(true)
+  DCDMagnifyingGlassView.dismiss(true)
 }
 ```
 
