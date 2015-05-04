@@ -17,7 +17,7 @@ class func setTargetView(targetView: UIView)
 //How much you want to magnify the view, default is 2x
 class func setScale(scale: CGFloat)
 
-//Allow you to drag the view, default is false
+//Allow you to drag the view, default is true
 class func allowDragging(allowDragging: Bool)
 
 //Allows you to set the frame of the view. The size of the frame will always convert to a square, 
