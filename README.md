@@ -32,7 +32,7 @@ You can show and dismiss **`DCDMagnifyingGlassView`** using the following class 
 class func show(animated: Bool)
 
 //Dismiss DCDMagnifyingGlassView and remove it from the targetView
-class func dismiss(animated: Bool);
+class func dismiss(animated: Bool)
 ```
 
 ## Example Code Using Swift
