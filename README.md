@@ -18,11 +18,17 @@ class func setTargetView(targetView: UIView)
 class func setScale(scale: CGFloat)
 
 //Allow you to drag the view, default is true
-class func allowDragging(allowDragging: Bool)
+class func allowDragging(allowDragging: Bool, animated: Bool)
 
 //Allows you to set the frame of the view. The size of the frame will always convert to a square, 
 //with size = MIN(width, height). Default is (100,100,100,100)
 class func setContentFrame(frame: CGRect)
+
+//Allows you to change the color of the shadow behind the magnifying glass, default is black
+class func setShadowColor(color: UIColor)
+
+//Allows you to change the color of the indicator, default is light gray
+class func setIndicatorColor(color: UIColor)
 ```
 
 You can show and dismiss **`DCDMagnifyingGlassView`** using the following class methods:
@@ -43,7 +49,7 @@ override func viewDidLoad(){
   DCDMagnifyingGlassView.setTargetView(self.view)
   DCDMagnifyingGlassView.setScale(5.0)
   DCDMagnifyingGlassView.allowDragging(true)
-  DCDMagnifyingGlassView.setContentFrame(CGRect(x: 115,y: 90,width:  100,height: 100))
+  DCDMagnifyingGlassView.setContentFrame(CGRect(x: 115,y: 90,width: 100,height: 100))
   
   //Initialize views
   ...
